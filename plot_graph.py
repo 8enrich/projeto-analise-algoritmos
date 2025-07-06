@@ -8,6 +8,7 @@ def plot(data):
     sizes = [d['SIZE'] for d in test_cases]
     slice_mean_times = [d['SLICE_MEAN_TIME'] for d in test_cases]
     index_mean_times = [d['INDEX_MEAN_TIME'] for d in test_cases]
+    plt.figure(figsize=(10, 6))
     plt.plot(sizes, slice_mean_times, marker='o', label="Slice (médio)")
     plt.plot(sizes, index_mean_times, marker='s', label="Indexado (médio)")
     plt.xlabel("Quantidade de elementos no array (N)")
@@ -16,7 +17,7 @@ def plot(data):
     plt.grid(True)
     plt.legend()
     plt.tight_layout()
-    plt.savefig("./graphs/comparacao-mergesort.png")
+    plt.savefig("./graphs/comparacao-mergesort.png", dpi=300)
     plt.show()
 
 def get_data():
